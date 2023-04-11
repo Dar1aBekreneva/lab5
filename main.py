@@ -31,12 +31,13 @@ def q4():
     import random
     my = ['Гусева', 'Голикова', 'Пахомов', 'Зверева', 'Никифоров', 'Морозов', 'Пименов', 'Юдина', 'Шмелева', 'Золотарев']
     other = ['Казакова', 'Кузнецов', 'Семенов', 'Морозов', 'Быкова', 'Васильева', 'Кузьмина', 'Ершова', 'Ильинская', 'Покровский']
-    team = tuple(random.sample(my, 5) + random.sample(other, 5))
+    team = (random.sample(my, 5) + random.sample(other, 5))
     print('1ая:', *my)
     print('2ая:', *other)
     print('солянка:', *team)
     print('длина:', len(team))
-    team = tuple(sorted(team))
+    team.sort()
+    print('отсортированная солянка: ', team)
     if 'Иванов' in team:
         print(team.count('Иванов'))
     else:
